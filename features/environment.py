@@ -1,15 +1,17 @@
 from selenium import webdriver
 
 
+
 def browser_init(context):
     """
     :param context: Behave context
     """
-    context.driver = webdriver.Chrome()
+    context.driver = webdriver.Chrome(executable_path=r"C:\Users\nurdi\Downloads\chromedriver.exe")
     # context.browser = webdriver.Safari()
     # context.browser = webdriver.Firefox()
 
-    context.driver.maximize_window()
+    # context.driver.maximize_window()
+# code will search for element for 4 seconds b4 throwing error
     context.driver.implicitly_wait(4)
 
 

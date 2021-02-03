@@ -22,8 +22,11 @@ expected_text = 'Cancel Items or Orders'
 # actual_text = driver.find_element(By.CSS_SELECTOR, ".help-content").text
 # assert expected_text in actual_text, f'Expected {expected_text}, but got {actual_text}'
 
-actual_text = driver.find_element(By.CSS_SELECTOR, ".help-content h1").text
+# actual_text = driver.find_element(By.CSS_SELECTOR, ".help-content h1").text
+# actual_text = driver.find_element(By.XPATH, "//div[@class='help-content']//h1").text
+actual_text = driver.find_element(By.XPATH, "//div[@class='help-content']/h1").text
 
 assert expected_text == actual_text, f'Expected {expected_text}, but got {actual_text}'
+
 
 driver.quit()

@@ -50,10 +50,14 @@ sign_in_continue.click()
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Privacy Notice link:
 privacy_notice_link = driver.find_element(By.XPATH, "//a[contains(@href, 'footer_privacy_notice')]")
+# privacy-notice_link = driver.find_element(By.XPATH, "//a[contains(@href, 'ap_desktop_footer_privacy_notice)]")
+# privacy-notice_link = driver.find_element(By.CSS_SELECTOR, "a[href*='ap_desktop_foo']")
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Conditions of Use link:
 cou_x = "//a[contains(text(), 'Conditions of Use') and contains(@href, 'cou?')]"
+# privacy_notice_link = driver.find_element(By.XPATH, "//a[contains(@href, 'ap_signin_notification_condition_of_use')
 cou_link = driver.find_element(By.XPATH, cou_x)
 
 
+# CSS_SELECTOR Doesnt support .text
