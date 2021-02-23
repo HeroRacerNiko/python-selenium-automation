@@ -9,7 +9,7 @@ Feature: # Check Amazon cart
     When Press Enter after input
     When Select first search result
     And Add the first element to cart with default size and <quantity> quantity
-    Then Go to cart to check content
+    Then Go to cart to check content & <quantity>
     Examples:
       |item|quantity|
       |shoes|1       |

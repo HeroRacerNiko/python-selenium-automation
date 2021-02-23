@@ -3,6 +3,8 @@ from behave import given, when, then
 
 PRIME_BOXES_LOC = (By.CSS_SELECTOR, '.benefit-box')
 BESTSELLER_LINKS = (By.XPATH, "//div[@id='zg_tabs']//a[contains(@href, 'ref=zg_bs_tab')]")
+# (By.CSS_SELECTOR, #zg_tabs a)
+# (By.XPATH, "//id='zg_tabs'")
 
 
 @given("Open Amazon Prime page")

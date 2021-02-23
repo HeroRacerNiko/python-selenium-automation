@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
-from time import sleep
 from selenium.webdriver.common.keys import Keys
 
 HELP_SEARCH_BAR = (By.ID, "helpsearch")
@@ -12,7 +11,6 @@ INFO_PAGE = (By.CSS_SELECTOR, ".help-content")
 @given('Open Amazon customer help page')
 def open_help_page(context):
     context.driver.get(URL)
-    sleep(0.5)
 
 # unnecessary step: no need to click on search bar, it gets selected and keys entered in following step
 
@@ -21,21 +19,18 @@ def open_help_page(context):
 def click_search_bar(context):
     search_bar = context.driver.find_element(*HELP_SEARCH_BAR)
     search_bar.click()
-    sleep(0.5)
 
 
 @when('Enter {command} into search bar')
 def enter_cancel_text(context, command):
     search_bar = context.driver.find_element(*HELP_SEARCH_BAR)
     search_bar.send_keys(command)
-    sleep(0.5)
 
 
 @when('Press Enter in search bar after input')
 def press_enter(context):
     search_bar = context.driver.find_element(*HELP_SEARCH_BAR)
     search_bar.send_keys(Keys.ENTER)
-    sleep(0.5)
 
 
 @then('{result} should be visible')

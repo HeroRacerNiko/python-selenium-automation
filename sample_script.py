@@ -15,8 +15,11 @@ from selenium.webdriver.common.by import By
 
 # if chromedriver is in same directory as python file there is no need to specify the executable_path
 driver = webdriver.Chrome()
+driver.implicitly_wait(10)
 # driver.minimize_window()
 driver.maximize_window()
+# driver.wait = WebDriverWait(driver, wait)
+
 
 # open the url
 driver.get('https://www.google.com/')
@@ -25,8 +28,8 @@ search = driver.find_element(By.NAME, 'q')
 search.clear()
 search.send_keys('Dress')
 
-# wait for 4 sec
-sleep(4)
+# wait for 4 sec - hard coded - not preferred
+# sleep(4)
 
 # click search
 driver.find_element(By.NAME, 'btnK').click()
