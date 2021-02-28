@@ -36,6 +36,7 @@ def check_for_tooltip(context):
 
 @when('Wait for {sec} seconds')
 def hard_sleep(context, sec):
+    # context.driver.refresh()
     sleep(int(sec))
 
 
