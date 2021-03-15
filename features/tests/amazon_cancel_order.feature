@@ -1,12 +1,9 @@
 # Created by nurdi at 2/2/2021
-  # The "Click on search bar is not really necessary as test runs demonstrate, but left for practice
 
 Feature: Amazon help search bar test
-  # Enter feature description here
-  #This feature tests amazon cancellations
+  This feature tests amazon cancellations page
 
   Scenario Outline: User can search <command> in help search bar
-    # Enter steps here
     Given Open Amazon customer help page
     When Click on search bar
     When Enter <command> into search bar

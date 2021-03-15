@@ -36,20 +36,22 @@ def close_new_window(context):
 
 @then('Iterate over bestseller links, verify changes in title')
 def iterate_over_bestseller_links(context):
-    index = 0
-    while index < len(context.driver.find_elements(*BESTSELLER_LINKS)):
-        best_sellers_tab = context.driver.find_elements(*BESTSELLER_LINKS)
-        best_sellers_tab[index].click()
-        best_sellers_tab = context.driver.find_elements(*BESTSELLER_LINKS)
-        page_title = context.driver.find_element(*TITLE)
-        assert bestseller_expected_titles[index] in page_title.text, \
-            f'{bestseller_expected_titles[index]} not in {page_title.text}'
-        assert best_sellers_tab[index].text in page_title.text, \
-            f'Error: web element text not in page title'
-        index += 1
-
-
-
-
-
-
+    # index = 0
+    # while index < len(context.driver.find_elements(*BESTSELLER_LINKS)):
+    #     best_sellers_tab = context.driver.find_elements(*BESTSELLER_LINKS)
+    #     best_sellers_tab[index].click()
+    #     best_sellers_tab = context.driver.find_elements(*BESTSELLER_LINKS)
+    #     page_title = context.driver.find_element(*TITLE)
+    #     assert bestseller_expected_titles[index] in page_title.text, \
+    #         f'{bestseller_expected_titles[index]} not in {page_title.text}'
+    #     assert best_sellers_tab[index].text in page_title.text, \
+    #         f'Error: web element text not in page title'
+    #     index += 1
+    link_tab = context.driver.find_elements(*BESTSELLER_LINKS)
+    for index in range(len(link_tab)):
+        link = context.driver.find_elements(*BESTSELLER_LINKS)[index]
+        link_text = link.text
+        link.click()
+        header_text = context.driver.find_element(*TITLE).text
+        assert link_text in header_text, f'Error...' \
+                                         f'{link_text} is not in {header_text}'

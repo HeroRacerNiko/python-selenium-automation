@@ -1,15 +1,7 @@
 # Created by nurdi at 1/24/2021
-Feature: # Amazon Search Test
-  # Enter feature description here
-
-  # This is a Gherkin file (.feature)
-    # Gherkin file should have key words: feature, scenario
-  # Given = precondition
-  # When = action
-  # and == when (or copy of step above)
-  # Then = verify
-
-
+Feature: Amazon Search Test
+  Searching Amazon and verifying results page contains
+  the searched item
   Scenario Outline: The user can search for a <search_query>
     Given Open Amazon page
     When Input <search_query> into Amazon search field
@@ -20,10 +12,7 @@ Feature: # Amazon Search Test
     |search_query|result   |
     |Watches     |"Watches"|
     |Dress       |"Dress"  |
-
-
-
-
+    |Lego        |"Lego"   |
 
 
 

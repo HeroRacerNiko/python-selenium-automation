@@ -1,5 +1,5 @@
 # Created by nurdi at 2/3/2021
-Feature: # Check Amazon cart
+Feature: Add items to cart and check cart's items quantity
   # Enter feature description here
 
   Scenario Outline: User is able to add items to cart
@@ -10,6 +10,7 @@ Feature: # Check Amazon cart
     When Select first search result
     And Add the first element to cart with default size and <quantity> quantity
     Then Go to cart to check content & <quantity>
+    Then Verify cart quantity matches <quantity> that was put in cart
     Examples:
       |item|quantity|
       |shoes|1       |
